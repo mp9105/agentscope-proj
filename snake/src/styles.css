@@ -1,0 +1,163 @@
+:root {
+  --bg: #0b0e14;
+  --panel: #12161f;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(1100px 700px at 50% -10%, #131a26 0%, var(--bg) 60%),
+    var(--bg);
+  color: var(--text);
+  font-family:
+    'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+}
+
+.shell {
+  width: min(94vw, 520px);
+  padding: 28px 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.stat {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stage {
+  position: relative;
+  margin-top: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+#board {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 12px;
+  border-radius: 8px;
+  background: rgba(9, 12, 17, 0.78);
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  transition: opacity 0.15s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--accent);
+}
+
+.overlay-sub {
+  margin: 6px 0 14px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(74, 222, 128, 0.45);
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.btn:hover {
+  background: rgba(74, 222, 128, 0.22);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.hint {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.9;
+}
